@@ -6,7 +6,7 @@ from aiogram import Bot, Dispatcher
 from main.handlers.user_handlers import router
 from dotenv import load_dotenv
 
-load_dotenv('gitignoref/.env')
+load_dotenv('gitignoref/.env') # add folder 'gitignoref' with file .env. Put in it 'TOKEN=your_token'
 TOKEN = os.getenv('TOKEN')
 
 bot = Bot(token=TOKEN)
