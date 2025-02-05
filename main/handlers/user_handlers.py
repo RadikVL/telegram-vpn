@@ -34,4 +34,4 @@ async def settings(callback: CallbackQuery):
 @router.callback_query(F.data == 'status')
 async def status(callback: CallbackQuery):
     await callback.answer('')
-    await callback.message.edit_text(text='/connection status - etc./', reply_markup=kb.main)
+    await callback.message.edit_text(text='*connection status - etc.*', reply_markup=kb.main)

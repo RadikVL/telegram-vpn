@@ -10,11 +10,12 @@ from aiogram.utils.keyboard import (InlineKeyboardBuilder, ReplyKeyboardBuilder)
 # )
 
 main = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text='Соединения', callback_data='connection')],
-    [InlineKeyboardButton(text='Купить', callback_data='payment'), InlineKeyboardButton(text='Настройки', callback_data='settings')],
+    [InlineKeyboardButton(text='Aктивные Соединения', callback_data='connection')],
+    [InlineKeyboardButton(text='Купить VPN', callback_data='payment'), InlineKeyboardButton(text='Настройки', callback_data='settings')],
     [InlineKeyboardButton(text='Обновить Статус', callback_data='status')]
 ])
 
+# availiable connections keyboard - доступные соединения
 conn = ['USA', 'UK', 'Russia', 'Словакия', 'Корея', 'Япония']
 async def inline_connections():
     builder = InlineKeyboardBuilder()
