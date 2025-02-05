@@ -19,20 +19,19 @@ async def main_page(callback: CallbackQuery):
 @router.callback_query(F.data == 'connection')
 async def connection(callback: CallbackQuery):
     await callback.answer('')
-    await callback.message.edit_text(text='Доступные соединения:', reply_markup=await kb.inline_connections())
+    await callback.message.edit_text(text='Доступные соединения:', reply_markup=await kb.user_avail_connections())
 
 @router.callback_query(F.data == 'payment')
 async def payment(callback: CallbackQuery):
     await callback.answer('')
-    await callback.message.edit_text(text='Доступные регионы:', reply_markup=kb.main)
+    await callback.message.edit_text(text='Доступные регионы:', reply_markup=await kb.server_avail_connections())
 
 @router.callback_query(F.data == 'settings')
 async def settings(callback: CallbackQuery):
     await callback.answer('')
-    await callback.message.edit_text(text='Настройки', reply_markup=kb.main)
+    await callback.message.edit_text(text='Настройки', reply_markup=kb.sett)
 
 @router.callback_query(F.data == 'status')
 async def status(callback: CallbackQuery):
     await callback.answer('')
     await callback.message.edit_text(text='*connection status - etc.*', reply_markup=kb.main)
-    
